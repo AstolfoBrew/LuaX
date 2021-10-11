@@ -1,0 +1,33 @@
+{
+	"name": "@astolfodev/monaco",
+	"displayName": "LuaX Monaco",
+	"author": {
+		"name": "Mokiy",
+		"url": "https://nora.lgbt"
+	},
+	"bugs": {
+		"url": "https://github.com/AstolfoBrew/LuaX/issues"
+	},
+	"version": "0.1.0-0",
+	"license": "MIT",
+	"contributors": [
+		{
+			"name": "Mokiy",
+			"url": "https://nora.lgbt"
+		},
+		{
+			"name": "YieldingCoder",
+			"url": "https://github.com/YieldingExploiter"
+		}
+	],
+	"scripts": {
+		"postinstall": "node out/credits.js"
+	},
+	"peerDependencies": {
+		"monaco-editor": "^0.29.1"
+	},
+	"devDependencies": {
+		"monaco-editor": "^0.29.1",
+		"monaco-editor-core": "^0.29.2"
+	}
+}
