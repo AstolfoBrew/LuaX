@@ -22,14 +22,16 @@
 		}
 	],
 	"scripts": {
-		"postinstall": "node out/credits.js"
+		"postinstall": "node out/credits.js",
+		"update": "np"
 	},
 	"peerDependencies": {
 		"monaco-editor": "^0.29.1"
 	},
 	"devDependencies": {
 		"monaco-editor": "^0.29.1",
-		"monaco-editor-core": "^0.29.2"
+		"monaco-editor-core": "^0.29.2",
+		"np": "^7.5.0"
 	},
 	"main": "out/index.js",
 	"repository": {

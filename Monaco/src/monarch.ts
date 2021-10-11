@@ -60,11 +60,6 @@ export const language = <languages.IMonarchLanguage>{
 		'true',
 		'until',
 		'while',
-		'game',
-		'script',
-		'assert',
-		'AstolfoBrew',
-		'Obfuscated',
 	],
 
 	brackets: [
@@ -95,6 +90,7 @@ export const language = <languages.IMonarchLanguage>{
 		'..',
 		'...',
 	],
+	globals: ['game', 'script', 'assert', 'AstolfoBrew', 'Obfuscated'],
 
 	// we include these common regular expressions
 	symbols: /[=><!~?:&|+\-*\/\^%]+/,
@@ -110,6 +106,7 @@ export const language = <languages.IMonarchLanguage>{
 				{
 					cases: {
 						'@keywords': { token: 'keyword.$0' },
+						'@globals': { token: 'global.$0' },
 						'@default': 'identifier',
 					},
 				},

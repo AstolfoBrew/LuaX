@@ -1,7 +1,8 @@
 import monarch from './monarch';
 
 export const Load = async (
-	monaco: typeof import('monaco-editor/esm/vs/editor/editor.api')
+	monaco: typeof import('monaco-editor/esm/vs/editor/editor.api'),
+	extendedMonarch: Record<any, any> = {}
 ) => {
 	// Register a new language
 	monaco.languages.register({ id: 'luax' });
@@ -17,7 +18,10 @@ export const Load = async (
 	// 		],
 	// 	},
 	// });
-	monaco.languages.setMonarchTokensProvider('luax', monarch);
+	monaco.languages.setMonarchTokensProvider('luax', {
+		...monarch,
+		...extendedMonarch,
+	});
 
 	// Define a new theme that contains only rules that match this language
 	monaco.editor.defineTheme('luax-default', {
@@ -49,7 +53,7 @@ export const Load = async (
 					},
 					{
 						label: 'log',
-						kind: monaco.languages.CompletionItemKind.Text,
+						kind: monaco.languages.CompletionItemKind.Function,
 						insertText: "print(${1:'Message'})",
 						documentation: 'Assert Global',
 					},
@@ -58,6 +62,62 @@ export const Load = async (
 						kind: monaco.languages.CompletionItemKind.Text,
 						insertText: "assert(${0:condition},${1:'No Message Provided.'})",
 						documentation: 'Assert Global',
+					},
+					{
+						label: 'forp',
+						kind: monaco.languages.CompletionItemKind.Snippet,
+						insertText: [
+							'for ${3:_},${4:o} in pairs(${1:table})',
+							'do',
+							'\t${2:// Code}',
+							'end;',
+						].join('\n'),
+						insertTextRules:
+							monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+						documentation: 'For Loop',
+						detail: 'For loop using pairs()',
+					},
+					{
+						label: 'forip',
+						kind: monaco.languages.CompletionItemKind.Snippet,
+						insertText: [
+							'for ${3:_},${4:o} in ipairs(${1:table})',
+							'do',
+							'\t${2:// Code}',
+							'end;',
+						].join('\n'),
+						insertTextRules:
+							monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+						documentation: 'For Loop',
+						detail: 'For loop using ipairs()',
+					},
+					{
+						label: 'forc',
+						kind: monaco.languages.CompletionItemKind.Snippet,
+						insertText: [
+							'for ${3:_},${4:o} in pairs(${1:instance}:GetChildren())',
+							'do',
+							'\t${2:// Code}',
+							'end;',
+						].join('\n'),
+						insertTextRules:
+							monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+						documentation: 'For Loop, GetChildren',
+						detail: '(Roblox) For each Child of Instance',
+					},
+					{
+						label: 'ford',
+						kind: monaco.languages.CompletionItemKind.Snippet,
+						insertText: [
+							'for ${3:_},${4:o} in pairs(${1:instance}:GetDescendants())',
+							'do',
+							'\t${2:// Code}',
+							'end;',
+						].join('\n'),
+						insertTextRules:
+							monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+						documentation: 'For Loop, GetDescendants',
+						detail: '(Roblox) For each Descendant of Instance',
 					},
 					{
 						label: 'if',
