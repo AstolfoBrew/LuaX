@@ -1,6 +1,7 @@
 {
 	"name": "@astolfodev/monaco",
 	"displayName": "LuaX Monaco",
+	"description": "LuaX Monaco Loader",
 	"author": {
 		"name": "Mokiy",
 		"url": "https://nora.lgbt"
@@ -29,5 +30,6 @@
 	"devDependencies": {
 		"monaco-editor": "^0.29.1",
 		"monaco-editor-core": "^0.29.2"
-	}
+	},
+	"main": "js/index.js"
 }
