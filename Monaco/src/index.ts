@@ -28,12 +28,11 @@ export const Load = async (
 		base: 'vs-dark',
 		inherit: true,
 		rules: [
-			{ token: 'global', foreground: '0ADC9C', fontStyle: 'bold' },
+			{ token: 'global', foreground: '0ADC9C', fontStyle: 'light' },
 			{ token: 'keyword', foreground: 'D556A9', fontStyle: 'bold' },
 			{ token: 'comment', foreground: 'c89292' },
 			{ token: 'number', foreground: 'a570ff' },
 			{ token: 'string', foreground: 'ffc073' },
-			{ token: 'global', foreground: '00aaff' },
 		],
 		colors: {
 			'editor.background': '#100D23',
