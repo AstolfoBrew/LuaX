@@ -86,3 +86,4 @@ export const Load = async (
 		},
 	});
 };
+export default Load;
