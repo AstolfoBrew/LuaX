@@ -89,8 +89,22 @@ export const language = <languages.IMonarchLanguage>{
 		'.',
 		'..',
 		'...',
+		'++',
 	],
-	globals: ['game', 'script', 'assert', 'AstolfoBrew', 'Obfuscated', 'print'],
+	globals: [
+		'game',
+		'script',
+		'assert',
+		'AstolfoBrew',
+		'Obfuscated',
+		'print',
+		'os',
+		'math',
+		'table',
+		'pack',
+		'unpack',
+		'game.PlaceId',
+	],
 
 	// we include these common regular expressions
 	symbols: /[=><!~?:&|+\-*\/\^%]+/,
